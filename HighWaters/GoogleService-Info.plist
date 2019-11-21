@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>250385353376-2nausjin3u13j4ebj2go41pbkkhtjdou.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.250385353376-2nausjin3u13j4ebj2go41pbkkhtjdou</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCtAJ1ohB4RZ3ZWuvf7B4b7Ox3V396wI-k</string>
+	<key>GCM_SENDER_ID</key>
+	<string>250385353376</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.marianasouza.HighWaters</string>
+	<key>PROJECT_ID</key>
+	<string>hightwaters-76193</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hightwaters-76193.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:250385353376:ios:3b1e5d09998207ff5497c5</string>
+	<key>DATABASE_URL</key>
+	<string>https://hightwaters-76193.firebaseio.com</string>
+</dict>
+</plist>
