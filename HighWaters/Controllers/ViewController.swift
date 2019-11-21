@@ -23,11 +23,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     private lazy var db: Firestore = {
         
         let fireStoreDB = Firestore.firestore()
-       
         let settings = fireStoreDB.settings
         settings.areTimestampsInSnapshotsEnabled = true
         fireStoreDB.settings = settings
-        
         return fireStoreDB
     }()
     
@@ -53,6 +51,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     private func updateAnnotation () {
         DispatchQueue.main.async {
+            self.mapView.removeAnnotations(self.mapView.annotations)
             self.floods.forEach {
                 self.addFloodToMap($0)
             }
@@ -128,6 +127,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         annotation.title = "Flooded"
         annotation.subtitle = flood.reportedDate.formatAsString()
         self.mapView.addAnnotation(annotation)
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        if let floodAnnotation = view.annotation as? FloodAnnotation {
+                let flood = floodAnnotation.flood
+            
+            self.db.collection("flooded-regions").document(flood.documentId!).delete() { error in
+                
+                if let error = error {
+                    print("Error removing document \(error)")
+                } else {
+                    self.updateAnnotation()
+                }
+            }
+        }
     }
     
     private func saveFloodToFirebase (){
